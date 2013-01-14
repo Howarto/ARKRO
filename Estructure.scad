@@ -1,3 +1,9 @@
+/* Created by Diego Lao Tebar, "Howarto" ==> www.rediok.blogspot.com */
+
+
+
+scale([]){ //Código para variar el tamaño al gusto
+
 //TAPA
 /*
 difference(){
@@ -11,7 +17,7 @@ cube(size=[1000,1000,100], center=true);
 
 //FRAME
 difference(){
-	union(){
+	%union(){
 		
 	//SOPORTE INFERIOR
 		color([0,0,1])
@@ -38,15 +44,17 @@ difference(){
 		cylinder(r=70, h=5);
 
 	}
-	
-//BASE
 
-translate([0,0,-50])
-cube(size=[30,30,30], center=true);
 
 	//AGUJEROS MÓDULOS
+
+	//LIGEREZA
+
+
+
+	//M1 PLACA
 	
-	//M1
+	rotate([0,0,45])
 	union(){
 
 		translate([17.5, 17.5, 20])
@@ -63,19 +71,19 @@ cube(size=[30,30,30], center=true);
 
 	}	
 
-	//M2
+	//M2 EXTRA
 	union(){
 
-		translate([23, 23, 0])
+		translate([26, 26, 0])
 		cylinder(r=3.5/2, h=100, $fn=100, center=true);
 
-		translate([-23, 23, 0])
+		translate([-26, 26, 0])
 		cylinder(r=3.5/2, h=100, $fn=100, center=true);
 
-		translate([23,- 23, 0])
+		translate([26,- 26, 0])
 		cylinder(r=3.5/2, h=100, $fn=100, center=true);
 
-		translate([-23,- 23, 0])
+		translate([-26,- 26, 0])
 		cylinder(r=3.5/2, h=100, $fn=100, center=true);
 	
 		
@@ -187,20 +195,25 @@ union(){
 	}
 	}
 
-//SOPORTE BATERÍAS
-/*
-rotate([0,0,90])
-translate([0,0,-9.5])
-cube(size=[20,46.6,5], center=true);
-*/
+//SOPORTE CÁMARA
+
+union(){
+	
+	translate([60, 60, 4.5])
+	rotate([0, 90, 45])
+	cube(size=[5,40,50], center=true);
+	cube();
+
+}
+
 //MODELO BATERÍA
-/*
+
 color([1,0.5,0])
 translate([0,0,-40])
-cube(size=[135, 46.6,24], center=true);
-*/
+cube(size=[104, 34 ,24], center=true);
+
 //MODELO BRAZOS METÁLICOS
-/*
+
 translate([0,132.5,0])
 cube(size=[8,250,8], center=true);
 
@@ -214,7 +227,8 @@ cube(size=[8,250,8], center=true);
 rotate([0,0,90])
 translate([0,-132.5,0])
 cube(size=[8,250,8], center=true);
-*/
+
+
 //MODELO PLACA
 /*
 difference(){
@@ -241,7 +255,5 @@ cube(size=[40.5,40.5,5],center=true); //placa 40,5x40,5
 }
 */
 
-
+}
 	
-
-
